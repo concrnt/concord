@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "concord/badge/params.proto";
 import "concord/badge/badge.proto";
+import "cosmos/nft/v1beta1/nft.proto";
 
 option go_package = "github.com/concrnt/concord/x/badge/types";
 
@@ -29,6 +30,12 @@ service Query {
   // Queries a list of GetBadgesByOwner items.
   rpc GetBadgesByOwner (QueryGetBadgesByOwnerRequest) returns (QueryGetBadgesByOwnerResponse) {
     option (google.api.http).get = "/concrnt/concord/badge/get_badges_by_owner/{owner}";
+  
+  }
+  
+  // Queries a list of GetSeriesByOwner items.
+  rpc GetSeriesByOwner (QueryGetSeriesByOwnerRequest) returns (QueryGetSeriesByOwnerResponse) {
+    option (google.api.http).get = "/concrnt/concord/badge/get_series_by_owner/{owner}";
   
   }
 }
@@ -57,5 +64,13 @@ message QueryGetBadgesByOwnerRequest {
 
 message QueryGetBadgesByOwnerResponse {
   repeated Badge badges = 1;
+}
+
+message QueryGetSeriesByOwnerRequest {
+  string owner = 1;
+}
+
+message QueryGetSeriesByOwnerResponse {
+  repeated cosmos.nft.v1beta1.Class series = 1;
 }
 

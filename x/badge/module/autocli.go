@@ -31,6 +31,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "owner"}},
 				},
 
+				{
+					RpcMethod:      "GetSeriesByOwner",
+					Use:            "get-series-by-owner [owner]",
+					Short:          "Query get-series-by-owner",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "owner"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
