@@ -5,6 +5,7 @@ import (
 
 	"cosmossdk.io/core/store"
 	"cosmossdk.io/log"
+	nftkeeper "cosmossdk.io/x/nft/keeper"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
@@ -22,6 +23,7 @@ type (
 		authority string
 
 		bankKeeper types.BankKeeper
+		nftKeeper  nftkeeper.Keeper
 	}
 )
 
@@ -32,6 +34,7 @@ func NewKeeper(
 	authority string,
 
 	bankKeeper types.BankKeeper,
+	nftKeeper nftkeeper.Keeper,
 ) Keeper {
 	if _, err := sdk.AccAddressFromBech32(authority); err != nil {
 		panic(fmt.Sprintf("invalid authority address: %s", authority))
@@ -44,6 +47,7 @@ func NewKeeper(
 		logger:       logger,
 
 		bankKeeper: bankKeeper,
+		nftKeeper:  nftKeeper,
 	}
 }
 
