@@ -9,7 +9,6 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "concord/badge/params.proto";
 import "concord/badge/badge.proto";
 
-
 option go_package = "github.com/concrnt/concord/x/badge/types";
 
 // Query defines the gRPC querier service.
@@ -24,6 +23,12 @@ service Query {
   // Queries a list of GetBadge items.
   rpc GetBadge (QueryGetBadgeRequest) returns (QueryGetBadgeResponse) {
     option (google.api.http).get = "/concrnt/concord/badge/get_badge/{seriesId}/{badgeId}";
+  
+  }
+  
+  // Queries a list of GetBadgesByOwner items.
+  rpc GetBadgesByOwner (QueryGetBadgesByOwnerRequest) returns (QueryGetBadgesByOwnerResponse) {
+    option (google.api.http).get = "/concrnt/concord/badge/get_badges_by_owner/{owner}";
   
   }
 }
@@ -44,5 +49,13 @@ message QueryGetBadgeRequest {
 
 message QueryGetBadgeResponse {
   Badge badge = 1;
+}
+
+message QueryGetBadgesByOwnerRequest {
+  string owner = 1;
+}
+
+message QueryGetBadgesByOwnerResponse {
+  repeated Badge badges = 1;
 }
 

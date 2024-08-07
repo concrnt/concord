@@ -24,6 +24,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "seriesId"}, {ProtoField: "badgeId"}},
 				},
 
+				{
+					RpcMethod:      "GetBadgesByOwner",
+					Use:            "get-badges-by-owner [owner]",
+					Short:          "Query get-badges-by-owner",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "owner"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},

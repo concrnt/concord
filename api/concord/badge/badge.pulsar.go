@@ -14,6 +14,8 @@ import (
 
 var (
 	md_Badge              protoreflect.MessageDescriptor
+	fd_Badge_classId      protoreflect.FieldDescriptor
+	fd_Badge_badgeId      protoreflect.FieldDescriptor
 	fd_Badge_name         protoreflect.FieldDescriptor
 	fd_Badge_description  protoreflect.FieldDescriptor
 	fd_Badge_uri          protoreflect.FieldDescriptor
@@ -25,6 +27,8 @@ var (
 func init() {
 	file_concord_badge_badge_proto_init()
 	md_Badge = File_concord_badge_badge_proto.Messages().ByName("Badge")
+	fd_Badge_classId = md_Badge.Fields().ByName("classId")
+	fd_Badge_badgeId = md_Badge.Fields().ByName("badgeId")
 	fd_Badge_name = md_Badge.Fields().ByName("name")
 	fd_Badge_description = md_Badge.Fields().ByName("description")
 	fd_Badge_uri = md_Badge.Fields().ByName("uri")
@@ -98,6 +102,18 @@ func (x *fastReflection_Badge) Interface() protoreflect.ProtoMessage {
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
 func (x *fastReflection_Badge) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.ClassId != "" {
+		value := protoreflect.ValueOfString(x.ClassId)
+		if !f(fd_Badge_classId, value) {
+			return
+		}
+	}
+	if x.BadgeId != "" {
+		value := protoreflect.ValueOfString(x.BadgeId)
+		if !f(fd_Badge_badgeId, value) {
+			return
+		}
+	}
 	if x.Name != "" {
 		value := protoreflect.ValueOfString(x.Name)
 		if !f(fd_Badge_name, value) {
@@ -149,6 +165,10 @@ func (x *fastReflection_Badge) Range(f func(protoreflect.FieldDescriptor, protor
 // a repeated field is populated if it is non-empty.
 func (x *fastReflection_Badge) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
+	case "concord.badge.Badge.classId":
+		return x.ClassId != ""
+	case "concord.badge.Badge.badgeId":
+		return x.BadgeId != ""
 	case "concord.badge.Badge.name":
 		return x.Name != ""
 	case "concord.badge.Badge.description":
@@ -177,6 +197,10 @@ func (x *fastReflection_Badge) Has(fd protoreflect.FieldDescriptor) bool {
 // Clear is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_Badge) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
+	case "concord.badge.Badge.classId":
+		x.ClassId = ""
+	case "concord.badge.Badge.badgeId":
+		x.BadgeId = ""
 	case "concord.badge.Badge.name":
 		x.Name = ""
 	case "concord.badge.Badge.description":
@@ -205,6 +229,12 @@ func (x *fastReflection_Badge) Clear(fd protoreflect.FieldDescriptor) {
 // of the value; to obtain a mutable reference, use Mutable.
 func (x *fastReflection_Badge) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
+	case "concord.badge.Badge.classId":
+		value := x.ClassId
+		return protoreflect.ValueOfString(value)
+	case "concord.badge.Badge.badgeId":
+		value := x.BadgeId
+		return protoreflect.ValueOfString(value)
 	case "concord.badge.Badge.name":
 		value := x.Name
 		return protoreflect.ValueOfString(value)
@@ -243,6 +273,10 @@ func (x *fastReflection_Badge) Get(descriptor protoreflect.FieldDescriptor) prot
 // Set is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_Badge) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
+	case "concord.badge.Badge.classId":
+		x.ClassId = value.Interface().(string)
+	case "concord.badge.Badge.badgeId":
+		x.BadgeId = value.Interface().(string)
 	case "concord.badge.Badge.name":
 		x.Name = value.Interface().(string)
 	case "concord.badge.Badge.description":
@@ -275,6 +309,10 @@ func (x *fastReflection_Badge) Set(fd protoreflect.FieldDescriptor, value protor
 // Mutable is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_Badge) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
+	case "concord.badge.Badge.classId":
+		panic(fmt.Errorf("field classId of message concord.badge.Badge is not mutable"))
+	case "concord.badge.Badge.badgeId":
+		panic(fmt.Errorf("field badgeId of message concord.badge.Badge is not mutable"))
 	case "concord.badge.Badge.name":
 		panic(fmt.Errorf("field name of message concord.badge.Badge is not mutable"))
 	case "concord.badge.Badge.description":
@@ -300,6 +338,10 @@ func (x *fastReflection_Badge) Mutable(fd protoreflect.FieldDescriptor) protoref
 // For lists, maps, and messages, this returns a new, empty, mutable value.
 func (x *fastReflection_Badge) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
+	case "concord.badge.Badge.classId":
+		return protoreflect.ValueOfString("")
+	case "concord.badge.Badge.badgeId":
+		return protoreflect.ValueOfString("")
 	case "concord.badge.Badge.name":
 		return protoreflect.ValueOfString("")
 	case "concord.badge.Badge.description":
@@ -381,6 +423,14 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
+		l = len(x.ClassId)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.BadgeId)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
 		l = len(x.Name)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
@@ -441,40 +491,54 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0
 			}
 			i--
-			dAtA[i] = 0x30
+			dAtA[i] = 0x40
 		}
 		if len(x.Owner) > 0 {
 			i -= len(x.Owner)
 			copy(dAtA[i:], x.Owner)
 			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Owner)))
 			i--
-			dAtA[i] = 0x2a
+			dAtA[i] = 0x3a
 		}
 		if len(x.Creator) > 0 {
 			i -= len(x.Creator)
 			copy(dAtA[i:], x.Creator)
 			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
 			i--
-			dAtA[i] = 0x22
+			dAtA[i] = 0x32
 		}
 		if len(x.Uri) > 0 {
 			i -= len(x.Uri)
 			copy(dAtA[i:], x.Uri)
 			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Uri)))
 			i--
-			dAtA[i] = 0x1a
+			dAtA[i] = 0x2a
 		}
 		if len(x.Description) > 0 {
 			i -= len(x.Description)
 			copy(dAtA[i:], x.Description)
 			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Description)))
 			i--
-			dAtA[i] = 0x12
+			dAtA[i] = 0x22
 		}
 		if len(x.Name) > 0 {
 			i -= len(x.Name)
 			copy(dAtA[i:], x.Name)
 			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Name)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if len(x.BadgeId) > 0 {
+			i -= len(x.BadgeId)
+			copy(dAtA[i:], x.BadgeId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.BadgeId)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.ClassId) > 0 {
+			i -= len(x.ClassId)
+			copy(dAtA[i:], x.ClassId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.ClassId)))
 			i--
 			dAtA[i] = 0xa
 		}
@@ -529,6 +593,70 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 			switch fieldNum {
 			case 1:
 				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field ClassId", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.ClassId = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field BadgeId", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.BadgeId = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
 				}
 				var stringLen uint64
@@ -559,7 +687,7 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 				}
 				x.Name = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
-			case 2:
+			case 4:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Description", wireType)
 				}
@@ -591,7 +719,7 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 				}
 				x.Description = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
-			case 3:
+			case 5:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Uri", wireType)
 				}
@@ -623,7 +751,7 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 				}
 				x.Uri = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
-			case 4:
+			case 6:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
 				}
@@ -655,7 +783,7 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 				}
 				x.Creator = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
-			case 5:
+			case 7:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Owner", wireType)
 				}
@@ -687,7 +815,7 @@ func (x *fastReflection_Badge) ProtoMethods() *protoiface.Methods {
 				}
 				x.Owner = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
-			case 6:
+			case 8:
 				if wireType != 0 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Transferable", wireType)
 				}
@@ -760,12 +888,14 @@ type Badge struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name         string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Description  string `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
-	Uri          string `protobuf:"bytes,3,opt,name=uri,proto3" json:"uri,omitempty"`
-	Creator      string `protobuf:"bytes,4,opt,name=creator,proto3" json:"creator,omitempty"`
-	Owner        string `protobuf:"bytes,5,opt,name=owner,proto3" json:"owner,omitempty"`
-	Transferable bool   `protobuf:"varint,6,opt,name=transferable,proto3" json:"transferable,omitempty"`
+	ClassId      string `protobuf:"bytes,1,opt,name=classId,proto3" json:"classId,omitempty"`
+	BadgeId      string `protobuf:"bytes,2,opt,name=badgeId,proto3" json:"badgeId,omitempty"`
+	Name         string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Description  string `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Uri          string `protobuf:"bytes,5,opt,name=uri,proto3" json:"uri,omitempty"`
+	Creator      string `protobuf:"bytes,6,opt,name=creator,proto3" json:"creator,omitempty"`
+	Owner        string `protobuf:"bytes,7,opt,name=owner,proto3" json:"owner,omitempty"`
+	Transferable bool   `protobuf:"varint,8,opt,name=transferable,proto3" json:"transferable,omitempty"`
 }
 
 func (x *Badge) Reset() {
@@ -786,6 +916,20 @@ func (*Badge) ProtoMessage() {}
 // Deprecated: Use Badge.ProtoReflect.Descriptor instead.
 func (*Badge) Descriptor() ([]byte, []int) {
 	return file_concord_badge_badge_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Badge) GetClassId() string {
+	if x != nil {
+		return x.ClassId
+	}
+	return ""
+}
+
+func (x *Badge) GetBadgeId() string {
+	if x != nil {
+		return x.BadgeId
+	}
+	return ""
 }
 
 func (x *Badge) GetName() string {
@@ -835,28 +979,32 @@ var File_concord_badge_badge_proto protoreflect.FileDescriptor
 var file_concord_badge_badge_proto_rawDesc = []byte{
 	0x0a, 0x19, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f,
 	0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0d, 0x63, 0x6f, 0x6e,
-	0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x22, 0xa3, 0x01, 0x0a, 0x05, 0x42,
-	0x61, 0x64, 0x67, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63,
-	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64,
-	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72,
-	0x69, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x69, 0x12, 0x18, 0x0a, 0x07,
-	0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63,
-	0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x18,
-	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x12, 0x22, 0x0a, 0x0c,
-	0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x06, 0x20, 0x01,
-	0x28, 0x08, 0x52, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x61, 0x62, 0x6c, 0x65,
-	0x42, 0xa2, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x50, 0x72, 0x6f,
-	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2, 0x02, 0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61,
-	0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a,
-	0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x22, 0xd7, 0x01, 0x0a, 0x05, 0x42,
+	0x61, 0x64, 0x67, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x49, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x49, 0x64, 0x12, 0x18,
+	0x0a, 0x07, 0x62, 0x61, 0x64, 0x67, 0x65, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x62, 0x61, 0x64, 0x67, 0x65, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b,
+	0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x10,
+	0x0a, 0x03, 0x75, 0x72, 0x69, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x69,
+	0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x06, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x77,
+	0x6e, 0x65, 0x72, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72,
+	0x12, 0x22, 0x0a, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x61, 0x62, 0x6c, 0x65,
+	0x18, 0x08, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72,
+	0x61, 0x62, 0x6c, 0x65, 0x42, 0xa2, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x6f, 0x6e,
+	0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0a, 0x42, 0x61, 0x64, 0x67,
+	0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e,
+	0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
+	0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa, 0x02, 0x0d, 0x43,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca, 0x02, 0x0d, 0x43,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2, 0x02, 0x19, 0x43,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c, 0x47, 0x50, 0x42,
+	0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
+	0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (

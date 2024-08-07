@@ -1726,6 +1726,920 @@ func (x *fastReflection_QueryGetBadgeResponse) ProtoMethods() *protoiface.Method
 	}
 }
 
+var (
+	md_QueryGetBadgesByOwnerRequest       protoreflect.MessageDescriptor
+	fd_QueryGetBadgesByOwnerRequest_owner protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_concord_badge_query_proto_init()
+	md_QueryGetBadgesByOwnerRequest = File_concord_badge_query_proto.Messages().ByName("QueryGetBadgesByOwnerRequest")
+	fd_QueryGetBadgesByOwnerRequest_owner = md_QueryGetBadgesByOwnerRequest.Fields().ByName("owner")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryGetBadgesByOwnerRequest)(nil)
+
+type fastReflection_QueryGetBadgesByOwnerRequest QueryGetBadgesByOwnerRequest
+
+func (x *QueryGetBadgesByOwnerRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesByOwnerRequest)(x)
+}
+
+func (x *QueryGetBadgesByOwnerRequest) slowProtoReflect() protoreflect.Message {
+	mi := &file_concord_badge_query_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryGetBadgesByOwnerRequest_messageType fastReflection_QueryGetBadgesByOwnerRequest_messageType
+var _ protoreflect.MessageType = fastReflection_QueryGetBadgesByOwnerRequest_messageType{}
+
+type fastReflection_QueryGetBadgesByOwnerRequest_messageType struct{}
+
+func (x fastReflection_QueryGetBadgesByOwnerRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesByOwnerRequest)(nil)
+}
+func (x fastReflection_QueryGetBadgesByOwnerRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesByOwnerRequest)
+}
+func (x fastReflection_QueryGetBadgesByOwnerRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesByOwnerRequest
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesByOwnerRequest
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Type() protoreflect.MessageType {
+	return _fastReflection_QueryGetBadgesByOwnerRequest_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesByOwnerRequest)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Interface() protoreflect.ProtoMessage {
+	return (*QueryGetBadgesByOwnerRequest)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Owner != "" {
+		value := protoreflect.ValueOfString(x.Owner)
+		if !f(fd_QueryGetBadgesByOwnerRequest_owner, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerRequest.owner":
+		return x.Owner != ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerRequest.owner":
+		x.Owner = ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerRequest.owner":
+		value := x.Owner
+		return protoreflect.ValueOfString(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerRequest does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerRequest.owner":
+		x.Owner = value.Interface().(string)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerRequest.owner":
+		panic(fmt.Errorf("field owner of message concord.badge.QueryGetBadgesByOwnerRequest is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerRequest.owner":
+		return protoreflect.ValueOfString("")
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in concord.badge.QueryGetBadgesByOwnerRequest", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryGetBadgesByOwnerRequest) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryGetBadgesByOwnerRequest)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Owner)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesByOwnerRequest)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.Owner) > 0 {
+			i -= len(x.Owner)
+			copy(dAtA[i:], x.Owner)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Owner)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesByOwnerRequest)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesByOwnerRequest: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesByOwnerRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Owner", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Owner = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var _ protoreflect.List = (*_QueryGetBadgesByOwnerResponse_1_list)(nil)
+
+type _QueryGetBadgesByOwnerResponse_1_list struct {
+	list *[]*Badge
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Badge)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Badge)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) AppendMutable() protoreflect.Value {
+	v := new(Badge)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) NewElement() protoreflect.Value {
+	v := new(Badge)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryGetBadgesByOwnerResponse_1_list) IsValid() bool {
+	return x.list != nil
+}
+
+var (
+	md_QueryGetBadgesByOwnerResponse        protoreflect.MessageDescriptor
+	fd_QueryGetBadgesByOwnerResponse_badges protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_concord_badge_query_proto_init()
+	md_QueryGetBadgesByOwnerResponse = File_concord_badge_query_proto.Messages().ByName("QueryGetBadgesByOwnerResponse")
+	fd_QueryGetBadgesByOwnerResponse_badges = md_QueryGetBadgesByOwnerResponse.Fields().ByName("badges")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryGetBadgesByOwnerResponse)(nil)
+
+type fastReflection_QueryGetBadgesByOwnerResponse QueryGetBadgesByOwnerResponse
+
+func (x *QueryGetBadgesByOwnerResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesByOwnerResponse)(x)
+}
+
+func (x *QueryGetBadgesByOwnerResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_concord_badge_query_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryGetBadgesByOwnerResponse_messageType fastReflection_QueryGetBadgesByOwnerResponse_messageType
+var _ protoreflect.MessageType = fastReflection_QueryGetBadgesByOwnerResponse_messageType{}
+
+type fastReflection_QueryGetBadgesByOwnerResponse_messageType struct{}
+
+func (x fastReflection_QueryGetBadgesByOwnerResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesByOwnerResponse)(nil)
+}
+func (x fastReflection_QueryGetBadgesByOwnerResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesByOwnerResponse)
+}
+func (x fastReflection_QueryGetBadgesByOwnerResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesByOwnerResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesByOwnerResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Type() protoreflect.MessageType {
+	return _fastReflection_QueryGetBadgesByOwnerResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesByOwnerResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Interface() protoreflect.ProtoMessage {
+	return (*QueryGetBadgesByOwnerResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if len(x.Badges) != 0 {
+		value := protoreflect.ValueOfList(&_QueryGetBadgesByOwnerResponse_1_list{list: &x.Badges})
+		if !f(fd_QueryGetBadgesByOwnerResponse_badges, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerResponse.badges":
+		return len(x.Badges) != 0
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerResponse.badges":
+		x.Badges = nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerResponse.badges":
+		if len(x.Badges) == 0 {
+			return protoreflect.ValueOfList(&_QueryGetBadgesByOwnerResponse_1_list{})
+		}
+		listValue := &_QueryGetBadgesByOwnerResponse_1_list{list: &x.Badges}
+		return protoreflect.ValueOfList(listValue)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerResponse.badges":
+		lv := value.List()
+		clv := lv.(*_QueryGetBadgesByOwnerResponse_1_list)
+		x.Badges = *clv.list
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerResponse.badges":
+		if x.Badges == nil {
+			x.Badges = []*Badge{}
+		}
+		value := &_QueryGetBadgesByOwnerResponse_1_list{list: &x.Badges}
+		return protoreflect.ValueOfList(value)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesByOwnerResponse.badges":
+		list := []*Badge{}
+		return protoreflect.ValueOfList(&_QueryGetBadgesByOwnerResponse_1_list{list: &list})
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesByOwnerResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesByOwnerResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in concord.badge.QueryGetBadgesByOwnerResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryGetBadgesByOwnerResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryGetBadgesByOwnerResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if len(x.Badges) > 0 {
+			for _, e := range x.Badges {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesByOwnerResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.Badges) > 0 {
+			for iNdEx := len(x.Badges) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.Badges[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0xa
+			}
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesByOwnerResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesByOwnerResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesByOwnerResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Badges", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Badges = append(x.Badges, &Badge{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Badges[len(x.Badges)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -1881,6 +2795,76 @@ func (x *QueryGetBadgeResponse) GetBadge() *Badge {
 	return nil
 }
 
+type QueryGetBadgesByOwnerRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Owner string `protobuf:"bytes,1,opt,name=owner,proto3" json:"owner,omitempty"`
+}
+
+func (x *QueryGetBadgesByOwnerRequest) Reset() {
+	*x = QueryGetBadgesByOwnerRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_concord_badge_query_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryGetBadgesByOwnerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryGetBadgesByOwnerRequest) ProtoMessage() {}
+
+// Deprecated: Use QueryGetBadgesByOwnerRequest.ProtoReflect.Descriptor instead.
+func (*QueryGetBadgesByOwnerRequest) Descriptor() ([]byte, []int) {
+	return file_concord_badge_query_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *QueryGetBadgesByOwnerRequest) GetOwner() string {
+	if x != nil {
+		return x.Owner
+	}
+	return ""
+}
+
+type QueryGetBadgesByOwnerResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Badges []*Badge `protobuf:"bytes,1,rep,name=badges,proto3" json:"badges,omitempty"`
+}
+
+func (x *QueryGetBadgesByOwnerResponse) Reset() {
+	*x = QueryGetBadgesByOwnerResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_concord_badge_query_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryGetBadgesByOwnerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryGetBadgesByOwnerResponse) ProtoMessage() {}
+
+// Deprecated: Use QueryGetBadgesByOwnerResponse.ProtoReflect.Descriptor instead.
+func (*QueryGetBadgesByOwnerResponse) Descriptor() ([]byte, []int) {
+	return file_concord_badge_query_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *QueryGetBadgesByOwnerResponse) GetBadges() []*Badge {
+	if x != nil {
+		return x.Badges
+	}
+	return nil
+}
+
 var File_concord_badge_query_proto protoreflect.FileDescriptor
 
 var file_concord_badge_query_proto_rawDesc = []byte{
@@ -1912,36 +2896,55 @@ var file_concord_badge_query_proto_rawDesc = []byte{
 	0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x2a, 0x0a, 0x05, 0x62, 0x61, 0x64, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x14, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67,
-	0x65, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x05, 0x62, 0x61, 0x64, 0x67, 0x65, 0x32, 0x96,
-	0x02, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x76, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x61,
-	0x6d, 0x73, 0x12, 0x21, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e,
-	0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x1f, 0x12, 0x1d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63,
-	0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x12, 0x94, 0x01, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x12, 0x23, 0x2e,
-	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75,
-	0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x24, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
+	0x65, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x05, 0x62, 0x61, 0x64, 0x67, 0x65, 0x22, 0x34,
+	0x0a, 0x1c, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73,
+	0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14,
+	0x0a, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6f,
+	0x77, 0x6e, 0x65, 0x72, 0x22, 0x4d, 0x0a, 0x1d, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74,
+	0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2c, 0x0a, 0x06, 0x62, 0x61, 0x64, 0x67, 0x65, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e,
+	0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x06, 0x62, 0x61, 0x64,
+	0x67, 0x65, 0x73, 0x32, 0xc2, 0x03, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x76, 0x0a,
+	0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x21, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72,
+	0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72,
+	0x61, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6f, 0x6e,
+	0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79,
+	0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1f, 0x12, 0x1d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74,
+	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x70,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x94, 0x01, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64,
+	0x67, 0x65, 0x12, 0x23, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
 	0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37,
-	0x12, 0x35, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65, 0x74, 0x5f, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0x2f, 0x7b, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x49, 0x64, 0x7d, 0x2f, 0x7b, 0x62,
-	0x61, 0x64, 0x67, 0x65, 0x49, 0x64, 0x7d, 0x42, 0xa2, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e,
-	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0a, 0x51,
-	0x75, 0x65, 0x72, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f,
-	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63,
-	0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa,
-	0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca,
-	0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2,
-	0x02, 0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c,
-	0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f,
-	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72,
+	0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74,
+	0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x37, 0x12, 0x35, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f,
+	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65,
+	0x74, 0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x7b, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x49,
+	0x64, 0x7d, 0x2f, 0x7b, 0x62, 0x61, 0x64, 0x67, 0x65, 0x49, 0x64, 0x7d, 0x12, 0xa9, 0x01, 0x0a,
+	0x10, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65,
+	0x72, 0x12, 0x2b, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67,
+	0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73,
+	0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c,
+	0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f,
+	0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3a, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x34, 0x12, 0x32, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65, 0x74,
+	0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x73, 0x5f, 0x62, 0x79, 0x5f, 0x6f, 0x77, 0x6e, 0x65, 0x72,
+	0x2f, 0x7b, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x7d, 0x42, 0xa2, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d,
+	0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0a,
+	0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74,
+	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e,
+	0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58,
+	0xaa, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65,
+	0xca, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65,
+	0xe2, 0x02, 0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65,
+	0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1956,27 +2959,32 @@ func file_concord_badge_query_proto_rawDescGZIP() []byte {
 	return file_concord_badge_query_proto_rawDescData
 }
 
-var file_concord_badge_query_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_concord_badge_query_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_concord_badge_query_proto_goTypes = []interface{}{
-	(*QueryParamsRequest)(nil),    // 0: concord.badge.QueryParamsRequest
-	(*QueryParamsResponse)(nil),   // 1: concord.badge.QueryParamsResponse
-	(*QueryGetBadgeRequest)(nil),  // 2: concord.badge.QueryGetBadgeRequest
-	(*QueryGetBadgeResponse)(nil), // 3: concord.badge.QueryGetBadgeResponse
-	(*Params)(nil),                // 4: concord.badge.Params
-	(*Badge)(nil),                 // 5: concord.badge.Badge
+	(*QueryParamsRequest)(nil),            // 0: concord.badge.QueryParamsRequest
+	(*QueryParamsResponse)(nil),           // 1: concord.badge.QueryParamsResponse
+	(*QueryGetBadgeRequest)(nil),          // 2: concord.badge.QueryGetBadgeRequest
+	(*QueryGetBadgeResponse)(nil),         // 3: concord.badge.QueryGetBadgeResponse
+	(*QueryGetBadgesByOwnerRequest)(nil),  // 4: concord.badge.QueryGetBadgesByOwnerRequest
+	(*QueryGetBadgesByOwnerResponse)(nil), // 5: concord.badge.QueryGetBadgesByOwnerResponse
+	(*Params)(nil),                        // 6: concord.badge.Params
+	(*Badge)(nil),                         // 7: concord.badge.Badge
 }
 var file_concord_badge_query_proto_depIdxs = []int32{
-	4, // 0: concord.badge.QueryParamsResponse.params:type_name -> concord.badge.Params
-	5, // 1: concord.badge.QueryGetBadgeResponse.badge:type_name -> concord.badge.Badge
-	0, // 2: concord.badge.Query.Params:input_type -> concord.badge.QueryParamsRequest
-	2, // 3: concord.badge.Query.GetBadge:input_type -> concord.badge.QueryGetBadgeRequest
-	1, // 4: concord.badge.Query.Params:output_type -> concord.badge.QueryParamsResponse
-	3, // 5: concord.badge.Query.GetBadge:output_type -> concord.badge.QueryGetBadgeResponse
-	4, // [4:6] is the sub-list for method output_type
-	2, // [2:4] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	6, // 0: concord.badge.QueryParamsResponse.params:type_name -> concord.badge.Params
+	7, // 1: concord.badge.QueryGetBadgeResponse.badge:type_name -> concord.badge.Badge
+	7, // 2: concord.badge.QueryGetBadgesByOwnerResponse.badges:type_name -> concord.badge.Badge
+	0, // 3: concord.badge.Query.Params:input_type -> concord.badge.QueryParamsRequest
+	2, // 4: concord.badge.Query.GetBadge:input_type -> concord.badge.QueryGetBadgeRequest
+	4, // 5: concord.badge.Query.GetBadgesByOwner:input_type -> concord.badge.QueryGetBadgesByOwnerRequest
+	1, // 6: concord.badge.Query.Params:output_type -> concord.badge.QueryParamsResponse
+	3, // 7: concord.badge.Query.GetBadge:output_type -> concord.badge.QueryGetBadgeResponse
+	5, // 8: concord.badge.Query.GetBadgesByOwner:output_type -> concord.badge.QueryGetBadgesByOwnerResponse
+	6, // [6:9] is the sub-list for method output_type
+	3, // [3:6] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_concord_badge_query_proto_init() }
@@ -2035,6 +3043,30 @@ func file_concord_badge_query_proto_init() {
 				return nil
 			}
 		}
+		file_concord_badge_query_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryGetBadgesByOwnerRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_concord_badge_query_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryGetBadgesByOwnerResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2042,7 +3074,7 @@ func file_concord_badge_query_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_concord_badge_query_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

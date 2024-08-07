@@ -19,8 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName   = "/concord.badge.Query/Params"
-	Query_GetBadge_FullMethodName = "/concord.badge.Query/GetBadge"
+	Query_Params_FullMethodName           = "/concord.badge.Query/Params"
+	Query_GetBadge_FullMethodName         = "/concord.badge.Query/GetBadge"
+	Query_GetBadgesByOwner_FullMethodName = "/concord.badge.Query/GetBadgesByOwner"
 )
 
 // QueryClient is the client API for Query service.
@@ -31,6 +32,8 @@ type QueryClient interface {
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
 	// Queries a list of GetBadge items.
 	GetBadge(ctx context.Context, in *QueryGetBadgeRequest, opts ...grpc.CallOption) (*QueryGetBadgeResponse, error)
+	// Queries a list of GetBadgesByOwner items.
+	GetBadgesByOwner(ctx context.Context, in *QueryGetBadgesByOwnerRequest, opts ...grpc.CallOption) (*QueryGetBadgesByOwnerResponse, error)
 }
 
 type queryClient struct {
@@ -59,6 +62,15 @@ func (c *queryClient) GetBadge(ctx context.Context, in *QueryGetBadgeRequest, op
 	return out, nil
 }
 
+func (c *queryClient) GetBadgesByOwner(ctx context.Context, in *QueryGetBadgesByOwnerRequest, opts ...grpc.CallOption) (*QueryGetBadgesByOwnerResponse, error) {
+	out := new(QueryGetBadgesByOwnerResponse)
+	err := c.cc.Invoke(ctx, Query_GetBadgesByOwner_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 // All implementations must embed UnimplementedQueryServer
 // for forward compatibility
@@ -67,6 +79,8 @@ type QueryServer interface {
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
 	// Queries a list of GetBadge items.
 	GetBadge(context.Context, *QueryGetBadgeRequest) (*QueryGetBadgeResponse, error)
+	// Queries a list of GetBadgesByOwner items.
+	GetBadgesByOwner(context.Context, *QueryGetBadgesByOwnerRequest) (*QueryGetBadgesByOwnerResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -79,6 +93,9 @@ func (UnimplementedQueryServer) Params(context.Context, *QueryParamsRequest) (*Q
 }
 func (UnimplementedQueryServer) GetBadge(context.Context, *QueryGetBadgeRequest) (*QueryGetBadgeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBadge not implemented")
+}
+func (UnimplementedQueryServer) GetBadgesByOwner(context.Context, *QueryGetBadgesByOwnerRequest) (*QueryGetBadgesByOwnerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBadgesByOwner not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}
 
@@ -129,6 +146,24 @@ func _Query_GetBadge_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_GetBadgesByOwner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetBadgesByOwnerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).GetBadgesByOwner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_GetBadgesByOwner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).GetBadgesByOwner(ctx, req.(*QueryGetBadgesByOwnerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Query_ServiceDesc is the grpc.ServiceDesc for Query service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -143,6 +178,10 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetBadge",
 			Handler:    _Query_GetBadge_Handler,
+		},
+		{
+			MethodName: "GetBadgesByOwner",
+			Handler:    _Query_GetBadgesByOwner_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

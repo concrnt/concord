@@ -43,6 +43,8 @@ func (k Keeper) GetBadge(goCtx context.Context, req *types.QueryGetBadgeRequest)
 	}
 
 	badge := types.Badge{
+		ClassId:      class.Id,
+		BadgeId:      nft.Id,
 		Name:         class.Name,
 		Description:  class.Description,
 		Uri:          uri,
