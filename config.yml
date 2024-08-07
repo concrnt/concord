@@ -1,22 +1,57 @@
 version: 1
 validation: sovereign
-accounts: 
-- name: alice
+accounts:
+- name: ignite
+  # con17v3zdp4c8sdl2sc83yzl0hjruk443lurhj4eah
+  mnemonic: shield pig frame wrap fan eagle wish pudding ancient transfer unveil buyer
   coins:
-  - 20000token
-  - 200000000stake
-- name: bob
+  - 100000000uAmpere # 100Ampere
+- name: pool
+  # con127m26hvqxssprkrqqf590hkh36nrrc05ycnj6l
+  mnemonic: crop pitch taxi radio adjust orphan combine equal afraid portion guitar used
   coins:
-  - 10000token
-  - 100000000stake
+  - 1000000000000uAmpere # 1MAmpere
 client:
   openapi:
     path: docs/static/openapi.yml
-faucet:
-  name: bob
-  coins:
-  - 5token
-  - 100000stake
 validators:
-- name: alice
-  bonded: 100000000stake
+- name: ignite
+  bonded: 100000000uAmpere # 100Ampere
+  config:
+    consensus:
+      timeout_commit: 5s
+  client:
+    chain-id: concord
+  app:
+    minimum-gas-prices: 0.005uAmpere
+genesis:
+  app_state:
+    bank:
+      denom_metadata:
+        - name: Ampere
+          symbol: A
+          base: uAmpere
+          display: Ampere
+          description: "The native token of the Concord blockchain."
+          denom_units:
+            - denom: uAmpere
+              exponent: 0
+              aliases:
+                - uA
+            - denom: mAmpere
+              exponent: 3
+              aliases:
+                - mA
+            - denom: Ampere
+              exponent: 6
+              aliases:
+                - A
+    staking:
+      params:
+        bond_denom: uAmpere
+    mint:
+      minter:
+        inflation: "0.13"
+        annual_provisions: "0.13"
+      params:
+        mint_denom: uAmpere
