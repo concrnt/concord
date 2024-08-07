@@ -1,0 +1,13 @@
+syntax = "proto3";
+package concord.badge;
+
+option go_package = "github.com/concrnt/concord/x/badge/types";
+
+message Badge {
+  
+  string name = 1; 
+  string description = 2; 
+  string uri = 3; 
+  string creator = 4; 
+  bool transferable = 5; 
+}
