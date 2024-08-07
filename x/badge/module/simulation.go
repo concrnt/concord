@@ -27,6 +27,10 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgCreateSeries int = 100
 
+	opWeightMsgMintBadge = "op_weight_msg_mint_badge"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgMintBadge int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -61,6 +65,17 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		badgesimulation.SimulateMsgCreateSeries(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
+	var weightMsgMintBadge int
+	simState.AppParams.GetOrGenerate(opWeightMsgMintBadge, &weightMsgMintBadge, nil,
+		func(_ *rand.Rand) {
+			weightMsgMintBadge = defaultWeightMsgMintBadge
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgMintBadge,
+		badgesimulation.SimulateMsgMintBadge(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
 	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
@@ -74,6 +89,14 @@ func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.Wei
 			defaultWeightMsgCreateSeries,
 			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
 				badgesimulation.SimulateMsgCreateSeries(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgMintBadge,
+			defaultWeightMsgMintBadge,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				badgesimulation.SimulateMsgMintBadge(am.accountKeeper, am.bankKeeper, am.keeper)
 				return nil
 			},
 		),

@@ -34,6 +34,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Send a create-series tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "name"}, {ProtoField: "description"}, {ProtoField: "uri"}, {ProtoField: "transferable"}},
 				},
+				{
+					RpcMethod:      "MintBadge",
+					Use:            "mint-badge [series] [receiver]",
+					Short:          "Send a mint-badge tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "series"}, {ProtoField: "receiver"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},

@@ -1894,6 +1894,910 @@ func (x *fastReflection_MsgCreateSeriesResponse) ProtoMethods() *protoiface.Meth
 	}
 }
 
+var (
+	md_MsgMintBadge          protoreflect.MessageDescriptor
+	fd_MsgMintBadge_creator  protoreflect.FieldDescriptor
+	fd_MsgMintBadge_series   protoreflect.FieldDescriptor
+	fd_MsgMintBadge_receiver protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_concord_badge_tx_proto_init()
+	md_MsgMintBadge = File_concord_badge_tx_proto.Messages().ByName("MsgMintBadge")
+	fd_MsgMintBadge_creator = md_MsgMintBadge.Fields().ByName("creator")
+	fd_MsgMintBadge_series = md_MsgMintBadge.Fields().ByName("series")
+	fd_MsgMintBadge_receiver = md_MsgMintBadge.Fields().ByName("receiver")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgMintBadge)(nil)
+
+type fastReflection_MsgMintBadge MsgMintBadge
+
+func (x *MsgMintBadge) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgMintBadge)(x)
+}
+
+func (x *MsgMintBadge) slowProtoReflect() protoreflect.Message {
+	mi := &file_concord_badge_tx_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgMintBadge_messageType fastReflection_MsgMintBadge_messageType
+var _ protoreflect.MessageType = fastReflection_MsgMintBadge_messageType{}
+
+type fastReflection_MsgMintBadge_messageType struct{}
+
+func (x fastReflection_MsgMintBadge_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgMintBadge)(nil)
+}
+func (x fastReflection_MsgMintBadge_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgMintBadge)
+}
+func (x fastReflection_MsgMintBadge_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgMintBadge
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgMintBadge) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgMintBadge
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgMintBadge) Type() protoreflect.MessageType {
+	return _fastReflection_MsgMintBadge_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgMintBadge) New() protoreflect.Message {
+	return new(fastReflection_MsgMintBadge)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgMintBadge) Interface() protoreflect.ProtoMessage {
+	return (*MsgMintBadge)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgMintBadge) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Creator != "" {
+		value := protoreflect.ValueOfString(x.Creator)
+		if !f(fd_MsgMintBadge_creator, value) {
+			return
+		}
+	}
+	if x.Series != "" {
+		value := protoreflect.ValueOfString(x.Series)
+		if !f(fd_MsgMintBadge_series, value) {
+			return
+		}
+	}
+	if x.Receiver != "" {
+		value := protoreflect.ValueOfString(x.Receiver)
+		if !f(fd_MsgMintBadge_receiver, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgMintBadge) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "concord.badge.MsgMintBadge.creator":
+		return x.Creator != ""
+	case "concord.badge.MsgMintBadge.series":
+		return x.Series != ""
+	case "concord.badge.MsgMintBadge.receiver":
+		return x.Receiver != ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadge"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadge does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadge) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "concord.badge.MsgMintBadge.creator":
+		x.Creator = ""
+	case "concord.badge.MsgMintBadge.series":
+		x.Series = ""
+	case "concord.badge.MsgMintBadge.receiver":
+		x.Receiver = ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadge"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadge does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgMintBadge) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "concord.badge.MsgMintBadge.creator":
+		value := x.Creator
+		return protoreflect.ValueOfString(value)
+	case "concord.badge.MsgMintBadge.series":
+		value := x.Series
+		return protoreflect.ValueOfString(value)
+	case "concord.badge.MsgMintBadge.receiver":
+		value := x.Receiver
+		return protoreflect.ValueOfString(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadge"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadge does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadge) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "concord.badge.MsgMintBadge.creator":
+		x.Creator = value.Interface().(string)
+	case "concord.badge.MsgMintBadge.series":
+		x.Series = value.Interface().(string)
+	case "concord.badge.MsgMintBadge.receiver":
+		x.Receiver = value.Interface().(string)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadge"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadge does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadge) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.MsgMintBadge.creator":
+		panic(fmt.Errorf("field creator of message concord.badge.MsgMintBadge is not mutable"))
+	case "concord.badge.MsgMintBadge.series":
+		panic(fmt.Errorf("field series of message concord.badge.MsgMintBadge is not mutable"))
+	case "concord.badge.MsgMintBadge.receiver":
+		panic(fmt.Errorf("field receiver of message concord.badge.MsgMintBadge is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadge"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadge does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgMintBadge) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.MsgMintBadge.creator":
+		return protoreflect.ValueOfString("")
+	case "concord.badge.MsgMintBadge.series":
+		return protoreflect.ValueOfString("")
+	case "concord.badge.MsgMintBadge.receiver":
+		return protoreflect.ValueOfString("")
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadge"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadge does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgMintBadge) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in concord.badge.MsgMintBadge", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgMintBadge) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadge) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgMintBadge) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgMintBadge) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgMintBadge)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Creator)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Series)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Receiver)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgMintBadge)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.Receiver) > 0 {
+			i -= len(x.Receiver)
+			copy(dAtA[i:], x.Receiver)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Receiver)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if len(x.Series) > 0 {
+			i -= len(x.Series)
+			copy(dAtA[i:], x.Series)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Series)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.Creator) > 0 {
+			i -= len(x.Creator)
+			copy(dAtA[i:], x.Creator)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgMintBadge)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgMintBadge: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgMintBadge: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Creator = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Series", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Series = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Receiver", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Receiver = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgMintBadgeResponse protoreflect.MessageDescriptor
+)
+
+func init() {
+	file_concord_badge_tx_proto_init()
+	md_MsgMintBadgeResponse = File_concord_badge_tx_proto.Messages().ByName("MsgMintBadgeResponse")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgMintBadgeResponse)(nil)
+
+type fastReflection_MsgMintBadgeResponse MsgMintBadgeResponse
+
+func (x *MsgMintBadgeResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgMintBadgeResponse)(x)
+}
+
+func (x *MsgMintBadgeResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_concord_badge_tx_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgMintBadgeResponse_messageType fastReflection_MsgMintBadgeResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgMintBadgeResponse_messageType{}
+
+type fastReflection_MsgMintBadgeResponse_messageType struct{}
+
+func (x fastReflection_MsgMintBadgeResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgMintBadgeResponse)(nil)
+}
+func (x fastReflection_MsgMintBadgeResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgMintBadgeResponse)
+}
+func (x fastReflection_MsgMintBadgeResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgMintBadgeResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgMintBadgeResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgMintBadgeResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgMintBadgeResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgMintBadgeResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgMintBadgeResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgMintBadgeResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgMintBadgeResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgMintBadgeResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgMintBadgeResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgMintBadgeResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadgeResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadgeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadgeResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadgeResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadgeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgMintBadgeResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadgeResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadgeResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadgeResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadgeResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadgeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadgeResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadgeResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadgeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgMintBadgeResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.MsgMintBadgeResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.MsgMintBadgeResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgMintBadgeResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in concord.badge.MsgMintBadgeResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgMintBadgeResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgMintBadgeResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgMintBadgeResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgMintBadgeResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgMintBadgeResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgMintBadgeResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgMintBadgeResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgMintBadgeResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgMintBadgeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -2074,6 +2978,83 @@ func (*MsgCreateSeriesResponse) Descriptor() ([]byte, []int) {
 	return file_concord_badge_tx_proto_rawDescGZIP(), []int{3}
 }
 
+type MsgMintBadge struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Creator  string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Series   string `protobuf:"bytes,2,opt,name=series,proto3" json:"series,omitempty"`
+	Receiver string `protobuf:"bytes,3,opt,name=receiver,proto3" json:"receiver,omitempty"`
+}
+
+func (x *MsgMintBadge) Reset() {
+	*x = MsgMintBadge{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_concord_badge_tx_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgMintBadge) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgMintBadge) ProtoMessage() {}
+
+// Deprecated: Use MsgMintBadge.ProtoReflect.Descriptor instead.
+func (*MsgMintBadge) Descriptor() ([]byte, []int) {
+	return file_concord_badge_tx_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *MsgMintBadge) GetCreator() string {
+	if x != nil {
+		return x.Creator
+	}
+	return ""
+}
+
+func (x *MsgMintBadge) GetSeries() string {
+	if x != nil {
+		return x.Series
+	}
+	return ""
+}
+
+func (x *MsgMintBadge) GetReceiver() string {
+	if x != nil {
+		return x.Receiver
+	}
+	return ""
+}
+
+type MsgMintBadgeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgMintBadgeResponse) Reset() {
+	*x = MsgMintBadgeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_concord_badge_tx_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgMintBadgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgMintBadgeResponse) ProtoMessage() {}
+
+// Deprecated: Use MsgMintBadgeResponse.ProtoReflect.Descriptor instead.
+func (*MsgMintBadgeResponse) Descriptor() ([]byte, []int) {
+	return file_concord_badge_tx_proto_rawDescGZIP(), []int{5}
+}
+
 var File_concord_badge_tx_proto protoreflect.FileDescriptor
 
 var file_concord_badge_tx_proto_rawDesc = []byte{
@@ -2112,30 +3093,43 @@ var file_concord_badge_tx_proto_rawDesc = []byte{
 	0x08, 0x52, 0x0c, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x61, 0x62, 0x6c, 0x65, 0x3a,
 	0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x22, 0x19, 0x0a,
 	0x17, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xbc, 0x01, 0x0a, 0x03, 0x4d, 0x73, 0x67,
-	0x12, 0x56, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x12, 0x1e, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65,
-	0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x1a, 0x26, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65,
-	0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x56, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x12, 0x1e, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x1a, 0x26, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0x9f, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e,
-	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x07, 0x54,
-	0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e,
-	0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa, 0x02, 0x0d, 0x43,
-	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca, 0x02, 0x0d, 0x43,
-	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2, 0x02, 0x19, 0x43,
-	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c, 0x47, 0x50, 0x42,
-	0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x6a, 0x0a, 0x0c, 0x4d, 0x73, 0x67, 0x4d,
+	0x69, 0x6e, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61,
+	0x74, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x6f, 0x72, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x12, 0x1a, 0x0a, 0x08, 0x72, 0x65,
+	0x63, 0x65, 0x69, 0x76, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x72, 0x65,
+	0x63, 0x65, 0x69, 0x76, 0x65, 0x72, 0x3a, 0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x6f, 0x72, 0x22, 0x16, 0x0a, 0x14, 0x4d, 0x73, 0x67, 0x4d, 0x69, 0x6e, 0x74, 0x42,
+	0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x8b, 0x02, 0x0a,
+	0x03, 0x4d, 0x73, 0x67, 0x12, 0x56, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x12, 0x1e, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62,
+	0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x1a, 0x26, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62,
+	0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x56, 0x0a, 0x0c,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x12, 0x1e, 0x2e, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d, 0x73, 0x67,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x1a, 0x26, 0x2e, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d, 0x73, 0x67,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4d, 0x0a, 0x09, 0x4d, 0x69, 0x6e, 0x74, 0x42, 0x61, 0x64, 0x67,
+	0x65, 0x12, 0x1b, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67,
+	0x65, 0x2e, 0x4d, 0x73, 0x67, 0x4d, 0x69, 0x6e, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x1a, 0x23,
+	0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x4d,
+	0x73, 0x67, 0x4d, 0x69, 0x6e, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0x9f, 0x01, 0x0a, 0x11, 0x63,
+	0x6f, 0x6d, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65,
+	0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f,
+	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63,
+	0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa,
+	0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca,
+	0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2,
+	0x02, 0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c,
+	0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f,
+	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2150,22 +3144,26 @@ func file_concord_badge_tx_proto_rawDescGZIP() []byte {
 	return file_concord_badge_tx_proto_rawDescData
 }
 
-var file_concord_badge_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_concord_badge_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_concord_badge_tx_proto_goTypes = []interface{}{
 	(*MsgUpdateParams)(nil),         // 0: concord.badge.MsgUpdateParams
 	(*MsgUpdateParamsResponse)(nil), // 1: concord.badge.MsgUpdateParamsResponse
 	(*MsgCreateSeries)(nil),         // 2: concord.badge.MsgCreateSeries
 	(*MsgCreateSeriesResponse)(nil), // 3: concord.badge.MsgCreateSeriesResponse
-	(*Params)(nil),                  // 4: concord.badge.Params
+	(*MsgMintBadge)(nil),            // 4: concord.badge.MsgMintBadge
+	(*MsgMintBadgeResponse)(nil),    // 5: concord.badge.MsgMintBadgeResponse
+	(*Params)(nil),                  // 6: concord.badge.Params
 }
 var file_concord_badge_tx_proto_depIdxs = []int32{
-	4, // 0: concord.badge.MsgUpdateParams.params:type_name -> concord.badge.Params
+	6, // 0: concord.badge.MsgUpdateParams.params:type_name -> concord.badge.Params
 	0, // 1: concord.badge.Msg.UpdateParams:input_type -> concord.badge.MsgUpdateParams
 	2, // 2: concord.badge.Msg.CreateSeries:input_type -> concord.badge.MsgCreateSeries
-	1, // 3: concord.badge.Msg.UpdateParams:output_type -> concord.badge.MsgUpdateParamsResponse
-	3, // 4: concord.badge.Msg.CreateSeries:output_type -> concord.badge.MsgCreateSeriesResponse
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
+	4, // 3: concord.badge.Msg.MintBadge:input_type -> concord.badge.MsgMintBadge
+	1, // 4: concord.badge.Msg.UpdateParams:output_type -> concord.badge.MsgUpdateParamsResponse
+	3, // 5: concord.badge.Msg.CreateSeries:output_type -> concord.badge.MsgCreateSeriesResponse
+	5, // 6: concord.badge.Msg.MintBadge:output_type -> concord.badge.MsgMintBadgeResponse
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -2226,6 +3224,30 @@ func file_concord_badge_tx_proto_init() {
 				return nil
 			}
 		}
+		file_concord_badge_tx_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgMintBadge); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_concord_badge_tx_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgMintBadgeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2233,7 +3255,7 @@ func file_concord_badge_tx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_concord_badge_tx_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

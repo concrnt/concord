@@ -18,6 +18,7 @@ service Msg {
   // parameters. The authority defaults to the x/gov module account.
   rpc UpdateParams (MsgUpdateParams) returns (MsgUpdateParamsResponse);
   rpc CreateSeries (MsgCreateSeries) returns (MsgCreateSeriesResponse);
+  rpc MintBadge    (MsgMintBadge   ) returns (MsgMintBadgeResponse   );
 }
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
@@ -47,4 +48,13 @@ message MsgCreateSeries {
 }
 
 message MsgCreateSeriesResponse {}
+
+message MsgMintBadge {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator  = 1;
+  string series   = 2;
+  string receiver = 3;
+}
+
+message MsgMintBadgeResponse {}
 
