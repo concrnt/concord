@@ -43,6 +43,7 @@ func (k msgServer) MintBadge(goCtx context.Context, msg *types.MsgMintBadge) (*t
 
 	err = k.nftKeeper.Mint(ctx, nft.NFT{
 		ClassId: msg.Series,
+		Uri:     msg.Uri,
 		Id:      id,
 	}, receiver)
 

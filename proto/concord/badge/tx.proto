@@ -53,7 +53,8 @@ message MsgMintBadge {
   option (cosmos.msg.v1.signer) = "creator";
   string creator  = 1;
   string series   = 2;
-  string receiver = 3;
+  string uri      = 3;
+  string receiver = 4;
 }
 
 message MsgMintBadgeResponse {}
