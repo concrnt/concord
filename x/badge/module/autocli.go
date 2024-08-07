@@ -28,6 +28,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
 				},
+				{
+					RpcMethod:      "CreateSeries",
+					Use:            "create-series [name] [description] [uri] [transferable]",
+					Short:          "Send a create-series tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "name"}, {ProtoField: "description"}, {ProtoField: "uri"}, {ProtoField: "transferable"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},
