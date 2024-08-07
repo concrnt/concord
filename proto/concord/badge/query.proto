@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package concord.badge;
 
 import "amino/amino.proto";
@@ -6,25 +7,42 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "concord/badge/params.proto";
+import "concord/badge/badge.proto";
+
 
 option go_package = "github.com/concrnt/concord/x/badge/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/concrnt/concord/badge/params";
+  
+  }
+  
+  // Queries a list of GetBadge items.
+  rpc GetBadge (QueryGetBadgeRequest) returns (QueryGetBadgeResponse) {
+    option (google.api.http).get = "/concrnt/concord/badge/get_badge/{seriesId}/{badgeId}";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
-  Params params = 1 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+  Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
 }
+
+message QueryGetBadgeRequest {
+  string seriesId = 1;
+  string badgeId  = 2;
+}
+
+message QueryGetBadgeResponse {
+  Badge badge = 1;
+}
+

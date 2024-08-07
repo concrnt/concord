@@ -7,6 +7,11 @@ import (
 	// this line is used by starport scaffolding # 1
 )
 
+type ISeriesData interface {
+	GetCreator() string
+	GetTransferable() bool
+}
+
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 	registry.RegisterImplementations((*sdk.Msg)(nil),
 		&MsgCreateSeries{},
@@ -16,7 +21,7 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 	)
 	// this line is used by starport scaffolding # 3
 
-	registry.RegisterImplementations((*sdk.Msg)(nil),
+	registry.RegisterImplementations((*ISeriesData)(nil),
 		&SeriesData{},
 	)
 

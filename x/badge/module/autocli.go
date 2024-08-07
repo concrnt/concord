@@ -17,6 +17,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:       "params",
 					Short:     "Shows the parameters of the module",
 				},
+				{
+					RpcMethod:      "GetBadge",
+					Use:            "get-badge [series-id] [badge-id]",
+					Short:          "Query get-badge",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "seriesId"}, {ProtoField: "badgeId"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
