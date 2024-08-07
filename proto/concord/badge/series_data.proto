@@ -1,0 +1,10 @@
+syntax = "proto3";
+package concord.badge;
+
+option go_package = "github.com/concrnt/concord/x/badge/types";
+
+message SeriesData {
+  
+  string creator = 1; 
+  bool transferable = 2; 
+}
