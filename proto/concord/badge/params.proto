@@ -1,0 +1,15 @@
+syntax = "proto3";
+package concord.badge;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/concrnt/concord/x/badge/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "concord/x/badge/Params";
+  option (gogoproto.equal) = true;
+
+  
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package concord.badge.module;
+
+import "cosmos/app/v1alpha1/module.proto";
+
+// Module is the config object for the module.
+message Module {
+  option (cosmos.app.v1alpha1.module) = {
+    go_import: "github.com/concrnt/concord/x/badge"
+  };
+
+  // authority defines the custom module authority. If not set, defaults to the governance module.
+  string authority = 1;
+}
