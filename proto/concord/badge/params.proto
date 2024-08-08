@@ -11,5 +11,7 @@ message Params {
   option (amino.name) = "concord/x/badge/Params";
   option (gogoproto.equal) = true;
 
+  uint64 create_series_cost = 1;
+  uint64 mint_badge_cost = 2;
   
 }

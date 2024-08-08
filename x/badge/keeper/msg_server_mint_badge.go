@@ -5,6 +5,7 @@ import (
 	"crypto/md5"
 
 	errorsmod "cosmossdk.io/errors"
+	"cosmossdk.io/math"
 	"cosmossdk.io/x/nft"
 	"github.com/concrnt/concord/x/badge/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -14,6 +15,11 @@ import (
 
 func (k msgServer) MintBadge(goCtx context.Context, msg *types.MsgMintBadge) (*types.MsgMintBadgeResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
+
+	creator, err := sdk.AccAddressFromBech32(msg.Creator)
+	if err != nil {
+		return nil, err
+	}
 
 	receiver, err := sdk.AccAddressFromBech32(msg.Receiver)
 	if err != nil {
@@ -40,6 +46,12 @@ func (k msgServer) MintBadge(goCtx context.Context, msg *types.MsgMintBadge) (*t
 	copy(first10[:], hash[:10])
 
 	id := "b" + cdid.New(first10, ctx.BlockTime()).String()
+
+	params := k.GetParams(ctx)
+	err = k.bankKeeper.SendCoinsFromAccountToModule(ctx, creator, "badge", sdk.NewCoins(sdk.NewCoin("uAmpere", math.NewInt(int64(params.MintBadgeCost)))))
+	if err != nil {
+		return nil, err
+	}
 
 	err = k.nftKeeper.Mint(ctx, nft.NFT{
 		ClassId: msg.Series,

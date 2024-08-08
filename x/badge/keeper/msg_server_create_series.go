@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/md5"
 
+	"cosmossdk.io/math"
 	"cosmossdk.io/x/nft"
 	"github.com/concrnt/concord/x/badge/types"
 	codec "github.com/cosmos/cosmos-sdk/codec/types"
@@ -14,6 +15,11 @@ import (
 func (k msgServer) CreateSeries(goCtx context.Context, msg *types.MsgCreateSeries) (*types.MsgCreateSeriesResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
+	creator, err := sdk.AccAddressFromBech32(msg.Creator)
+	if err != nil {
+		return nil, err
+	}
+
 	source := []byte(msg.String())
 	hash := md5.Sum(source)
 	var first10 [10]byte
@@ -22,11 +28,17 @@ func (k msgServer) CreateSeries(goCtx context.Context, msg *types.MsgCreateSerie
 	id := "B" + cdid.New(first10, ctx.BlockTime()).String()
 
 	badgeData := types.SeriesData{
-		Creator:      msg.Creator,
+		Creator:      creator.String(),
 		Transferable: msg.Transferable,
 	}
 
 	anydata, err := codec.NewAnyWithValue(&badgeData)
+	if err != nil {
+		return nil, err
+	}
+
+	params := k.GetParams(ctx)
+	err = k.bankKeeper.SendCoinsFromAccountToModule(ctx, creator, "badge", sdk.NewCoins(sdk.NewCoin("uAmpere", math.NewInt(int64(params.CreateSeriesCost)))))
 	if err != nil {
 		return nil, err
 	}

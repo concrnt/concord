@@ -15,12 +15,16 @@ import (
 )
 
 var (
-	md_Params protoreflect.MessageDescriptor
+	md_Params                    protoreflect.MessageDescriptor
+	fd_Params_create_series_cost protoreflect.FieldDescriptor
+	fd_Params_mint_badge_cost    protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_concord_badge_params_proto_init()
 	md_Params = File_concord_badge_params_proto.Messages().ByName("Params")
+	fd_Params_create_series_cost = md_Params.Fields().ByName("create_series_cost")
+	fd_Params_mint_badge_cost = md_Params.Fields().ByName("mint_badge_cost")
 }
 
 var _ protoreflect.Message = (*fastReflection_Params)(nil)
@@ -88,6 +92,18 @@ func (x *fastReflection_Params) Interface() protoreflect.ProtoMessage {
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
 func (x *fastReflection_Params) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.CreateSeriesCost != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.CreateSeriesCost)
+		if !f(fd_Params_create_series_cost, value) {
+			return
+		}
+	}
+	if x.MintBadgeCost != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.MintBadgeCost)
+		if !f(fd_Params_mint_badge_cost, value) {
+			return
+		}
+	}
 }
 
 // Has reports whether a field is populated.
@@ -103,6 +119,10 @@ func (x *fastReflection_Params) Range(f func(protoreflect.FieldDescriptor, proto
 // a repeated field is populated if it is non-empty.
 func (x *fastReflection_Params) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
+	case "concord.badge.Params.create_series_cost":
+		return x.CreateSeriesCost != uint64(0)
+	case "concord.badge.Params.mint_badge_cost":
+		return x.MintBadgeCost != uint64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.Params"))
@@ -119,6 +139,10 @@ func (x *fastReflection_Params) Has(fd protoreflect.FieldDescriptor) bool {
 // Clear is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_Params) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
+	case "concord.badge.Params.create_series_cost":
+		x.CreateSeriesCost = uint64(0)
+	case "concord.badge.Params.mint_badge_cost":
+		x.MintBadgeCost = uint64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.Params"))
@@ -135,6 +159,12 @@ func (x *fastReflection_Params) Clear(fd protoreflect.FieldDescriptor) {
 // of the value; to obtain a mutable reference, use Mutable.
 func (x *fastReflection_Params) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
+	case "concord.badge.Params.create_series_cost":
+		value := x.CreateSeriesCost
+		return protoreflect.ValueOfUint64(value)
+	case "concord.badge.Params.mint_badge_cost":
+		value := x.MintBadgeCost
+		return protoreflect.ValueOfUint64(value)
 	default:
 		if descriptor.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.Params"))
@@ -155,6 +185,10 @@ func (x *fastReflection_Params) Get(descriptor protoreflect.FieldDescriptor) pro
 // Set is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_Params) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
+	case "concord.badge.Params.create_series_cost":
+		x.CreateSeriesCost = value.Uint()
+	case "concord.badge.Params.mint_badge_cost":
+		x.MintBadgeCost = value.Uint()
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.Params"))
@@ -175,6 +209,10 @@ func (x *fastReflection_Params) Set(fd protoreflect.FieldDescriptor, value proto
 // Mutable is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_Params) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
+	case "concord.badge.Params.create_series_cost":
+		panic(fmt.Errorf("field create_series_cost of message concord.badge.Params is not mutable"))
+	case "concord.badge.Params.mint_badge_cost":
+		panic(fmt.Errorf("field mint_badge_cost of message concord.badge.Params is not mutable"))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.Params"))
@@ -188,6 +226,10 @@ func (x *fastReflection_Params) Mutable(fd protoreflect.FieldDescriptor) protore
 // For lists, maps, and messages, this returns a new, empty, mutable value.
 func (x *fastReflection_Params) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
+	case "concord.badge.Params.create_series_cost":
+		return protoreflect.ValueOfUint64(uint64(0))
+	case "concord.badge.Params.mint_badge_cost":
+		return protoreflect.ValueOfUint64(uint64(0))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.Params"))
@@ -257,6 +299,12 @@ func (x *fastReflection_Params) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
+		if x.CreateSeriesCost != 0 {
+			n += 1 + runtime.Sov(uint64(x.CreateSeriesCost))
+		}
+		if x.MintBadgeCost != 0 {
+			n += 1 + runtime.Sov(uint64(x.MintBadgeCost))
+		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
 		}
@@ -285,6 +333,16 @@ func (x *fastReflection_Params) ProtoMethods() *protoiface.Methods {
 		if x.unknownFields != nil {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.MintBadgeCost != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.MintBadgeCost))
+			i--
+			dAtA[i] = 0x10
+		}
+		if x.CreateSeriesCost != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.CreateSeriesCost))
+			i--
+			dAtA[i] = 0x8
 		}
 		if input.Buf != nil {
 			input.Buf = append(input.Buf, dAtA...)
@@ -335,6 +393,44 @@ func (x *fastReflection_Params) ProtoMethods() *protoiface.Methods {
 				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: Params: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
+			case 1:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CreateSeriesCost", wireType)
+				}
+				x.CreateSeriesCost = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.CreateSeriesCost |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 2:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field MintBadgeCost", wireType)
+				}
+				x.MintBadgeCost = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.MintBadgeCost |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -388,6 +484,9 @@ type Params struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
+
+	CreateSeriesCost uint64 `protobuf:"varint,1,opt,name=create_series_cost,json=createSeriesCost,proto3" json:"create_series_cost,omitempty"`
+	MintBadgeCost    uint64 `protobuf:"varint,2,opt,name=mint_badge_cost,json=mintBadgeCost,proto3" json:"mint_badge_cost,omitempty"`
 }
 
 func (x *Params) Reset() {
@@ -410,6 +509,20 @@ func (*Params) Descriptor() ([]byte, []int) {
 	return file_concord_badge_params_proto_rawDescGZIP(), []int{0}
 }
 
+func (x *Params) GetCreateSeriesCost() uint64 {
+	if x != nil {
+		return x.CreateSeriesCost
+	}
+	return 0
+}
+
+func (x *Params) GetMintBadgeCost() uint64 {
+	if x != nil {
+		return x.MintBadgeCost
+	}
+	return 0
+}
+
 var File_concord_badge_params_proto protoreflect.FileDescriptor
 
 var file_concord_badge_params_proto_rawDesc = []byte{
@@ -418,20 +531,26 @@ var file_concord_badge_params_proto_rawDesc = []byte{
 	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x1a, 0x11, 0x61, 0x6d, 0x69,
 	0x6e, 0x6f, 0x2f, 0x61, 0x6d, 0x69, 0x6e, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x14,
 	0x67, 0x6f, 0x67, 0x6f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x67, 0x6f, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x22, 0x29, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x3a, 0x1f,
-	0xe8, 0xa0, 0x1f, 0x01, 0x8a, 0xe7, 0xb0, 0x2a, 0x16, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2f, 0x78, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x42,
-	0xa3, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e,
-	0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0b, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x50, 0x72, 0x6f,
-	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2, 0x02, 0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f,
-	0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61,
-	0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a,
-	0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x6f, 0x74, 0x6f, 0x22, 0x7f, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x2c,
+	0x0a, 0x12, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x5f,
+	0x63, 0x6f, 0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x10, 0x63, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x43, 0x6f, 0x73, 0x74, 0x12, 0x26, 0x0a, 0x0f,
+	0x6d, 0x69, 0x6e, 0x74, 0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x5f, 0x63, 0x6f, 0x73, 0x74, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0d, 0x6d, 0x69, 0x6e, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65,
+	0x43, 0x6f, 0x73, 0x74, 0x3a, 0x1f, 0xe8, 0xa0, 0x1f, 0x01, 0x8a, 0xe7, 0xb0, 0x2a, 0x16, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x78, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x50,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x42, 0xa3, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x6f,
+	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0b, 0x50, 0x61, 0x72,
+	0x61, 0x6d, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
+	0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa, 0x02,
+	0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca, 0x02,
+	0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2, 0x02,
+	0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c, 0x47,
+	0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e,
+	0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
