@@ -38,6 +38,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "owner"}},
 				},
 
+				{
+					RpcMethod:      "GetBadgesBySeries",
+					Use:            "get-badges-by-series [series]",
+					Short:          "Query get-badges-by-series",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "series"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},

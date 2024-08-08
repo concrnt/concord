@@ -38,6 +38,12 @@ service Query {
     option (google.api.http).get = "/concrnt/concord/badge/get_series_by_owner/{owner}";
   
   }
+  
+  // Queries a list of GetBadgesBySeries items.
+  rpc GetBadgesBySeries (QueryGetBadgesBySeriesRequest) returns (QueryGetBadgesBySeriesResponse) {
+    option (google.api.http).get = "/concrnt/concord/badge/get_badges_by_series/{series}";
+  
+  }
 }
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
@@ -72,5 +78,13 @@ message QueryGetSeriesByOwnerRequest {
 
 message QueryGetSeriesByOwnerResponse {
   repeated cosmos.nft.v1beta1.Class series = 1;
+}
+
+message QueryGetBadgesBySeriesRequest {
+  string series = 1;
+}
+
+message QueryGetBadgesBySeriesResponse {
+  repeated Badge badges = 1;
 }
 

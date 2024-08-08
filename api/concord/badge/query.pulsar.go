@@ -3555,6 +3555,920 @@ func (x *fastReflection_QueryGetSeriesByOwnerResponse) ProtoMethods() *protoifac
 	}
 }
 
+var (
+	md_QueryGetBadgesBySeriesRequest        protoreflect.MessageDescriptor
+	fd_QueryGetBadgesBySeriesRequest_series protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_concord_badge_query_proto_init()
+	md_QueryGetBadgesBySeriesRequest = File_concord_badge_query_proto.Messages().ByName("QueryGetBadgesBySeriesRequest")
+	fd_QueryGetBadgesBySeriesRequest_series = md_QueryGetBadgesBySeriesRequest.Fields().ByName("series")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryGetBadgesBySeriesRequest)(nil)
+
+type fastReflection_QueryGetBadgesBySeriesRequest QueryGetBadgesBySeriesRequest
+
+func (x *QueryGetBadgesBySeriesRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesBySeriesRequest)(x)
+}
+
+func (x *QueryGetBadgesBySeriesRequest) slowProtoReflect() protoreflect.Message {
+	mi := &file_concord_badge_query_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryGetBadgesBySeriesRequest_messageType fastReflection_QueryGetBadgesBySeriesRequest_messageType
+var _ protoreflect.MessageType = fastReflection_QueryGetBadgesBySeriesRequest_messageType{}
+
+type fastReflection_QueryGetBadgesBySeriesRequest_messageType struct{}
+
+func (x fastReflection_QueryGetBadgesBySeriesRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesBySeriesRequest)(nil)
+}
+func (x fastReflection_QueryGetBadgesBySeriesRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesBySeriesRequest)
+}
+func (x fastReflection_QueryGetBadgesBySeriesRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesBySeriesRequest
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesBySeriesRequest
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Type() protoreflect.MessageType {
+	return _fastReflection_QueryGetBadgesBySeriesRequest_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesBySeriesRequest)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Interface() protoreflect.ProtoMessage {
+	return (*QueryGetBadgesBySeriesRequest)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Series != "" {
+		value := protoreflect.ValueOfString(x.Series)
+		if !f(fd_QueryGetBadgesBySeriesRequest_series, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesRequest.series":
+		return x.Series != ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesRequest.series":
+		x.Series = ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesRequest.series":
+		value := x.Series
+		return protoreflect.ValueOfString(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesRequest does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesRequest.series":
+		x.Series = value.Interface().(string)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesRequest.series":
+		panic(fmt.Errorf("field series of message concord.badge.QueryGetBadgesBySeriesRequest is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesRequest.series":
+		return protoreflect.ValueOfString("")
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesRequest"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in concord.badge.QueryGetBadgesBySeriesRequest", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryGetBadgesBySeriesRequest) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryGetBadgesBySeriesRequest)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Series)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesBySeriesRequest)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.Series) > 0 {
+			i -= len(x.Series)
+			copy(dAtA[i:], x.Series)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Series)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesBySeriesRequest)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesBySeriesRequest: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesBySeriesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Series", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Series = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var _ protoreflect.List = (*_QueryGetBadgesBySeriesResponse_1_list)(nil)
+
+type _QueryGetBadgesBySeriesResponse_1_list struct {
+	list *[]*Badge
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Badge)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Badge)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) AppendMutable() protoreflect.Value {
+	v := new(Badge)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) NewElement() protoreflect.Value {
+	v := new(Badge)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryGetBadgesBySeriesResponse_1_list) IsValid() bool {
+	return x.list != nil
+}
+
+var (
+	md_QueryGetBadgesBySeriesResponse        protoreflect.MessageDescriptor
+	fd_QueryGetBadgesBySeriesResponse_badges protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_concord_badge_query_proto_init()
+	md_QueryGetBadgesBySeriesResponse = File_concord_badge_query_proto.Messages().ByName("QueryGetBadgesBySeriesResponse")
+	fd_QueryGetBadgesBySeriesResponse_badges = md_QueryGetBadgesBySeriesResponse.Fields().ByName("badges")
+}
+
+var _ protoreflect.Message = (*fastReflection_QueryGetBadgesBySeriesResponse)(nil)
+
+type fastReflection_QueryGetBadgesBySeriesResponse QueryGetBadgesBySeriesResponse
+
+func (x *QueryGetBadgesBySeriesResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesBySeriesResponse)(x)
+}
+
+func (x *QueryGetBadgesBySeriesResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_concord_badge_query_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_QueryGetBadgesBySeriesResponse_messageType fastReflection_QueryGetBadgesBySeriesResponse_messageType
+var _ protoreflect.MessageType = fastReflection_QueryGetBadgesBySeriesResponse_messageType{}
+
+type fastReflection_QueryGetBadgesBySeriesResponse_messageType struct{}
+
+func (x fastReflection_QueryGetBadgesBySeriesResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryGetBadgesBySeriesResponse)(nil)
+}
+func (x fastReflection_QueryGetBadgesBySeriesResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesBySeriesResponse)
+}
+func (x fastReflection_QueryGetBadgesBySeriesResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesBySeriesResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryGetBadgesBySeriesResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Type() protoreflect.MessageType {
+	return _fastReflection_QueryGetBadgesBySeriesResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) New() protoreflect.Message {
+	return new(fastReflection_QueryGetBadgesBySeriesResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Interface() protoreflect.ProtoMessage {
+	return (*QueryGetBadgesBySeriesResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if len(x.Badges) != 0 {
+		value := protoreflect.ValueOfList(&_QueryGetBadgesBySeriesResponse_1_list{list: &x.Badges})
+		if !f(fd_QueryGetBadgesBySeriesResponse_badges, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesResponse.badges":
+		return len(x.Badges) != 0
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesResponse.badges":
+		x.Badges = nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesResponse.badges":
+		if len(x.Badges) == 0 {
+			return protoreflect.ValueOfList(&_QueryGetBadgesBySeriesResponse_1_list{})
+		}
+		listValue := &_QueryGetBadgesBySeriesResponse_1_list{list: &x.Badges}
+		return protoreflect.ValueOfList(listValue)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesResponse.badges":
+		lv := value.List()
+		clv := lv.(*_QueryGetBadgesBySeriesResponse_1_list)
+		x.Badges = *clv.list
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesResponse.badges":
+		if x.Badges == nil {
+			x.Badges = []*Badge{}
+		}
+		value := &_QueryGetBadgesBySeriesResponse_1_list{list: &x.Badges}
+		return protoreflect.ValueOfList(value)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "concord.badge.QueryGetBadgesBySeriesResponse.badges":
+		list := []*Badge{}
+		return protoreflect.ValueOfList(&_QueryGetBadgesBySeriesResponse_1_list{list: &list})
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: concord.badge.QueryGetBadgesBySeriesResponse"))
+		}
+		panic(fmt.Errorf("message concord.badge.QueryGetBadgesBySeriesResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in concord.badge.QueryGetBadgesBySeriesResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_QueryGetBadgesBySeriesResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*QueryGetBadgesBySeriesResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if len(x.Badges) > 0 {
+			for _, e := range x.Badges {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesBySeriesResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.Badges) > 0 {
+			for iNdEx := len(x.Badges) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.Badges[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0xa
+			}
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*QueryGetBadgesBySeriesResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesBySeriesResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryGetBadgesBySeriesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Badges", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Badges = append(x.Badges, &Badge{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Badges[len(x.Badges)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -3850,6 +4764,76 @@ func (x *QueryGetSeriesByOwnerResponse) GetSeries() []*v1beta1.Class {
 	return nil
 }
 
+type QueryGetBadgesBySeriesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Series string `protobuf:"bytes,1,opt,name=series,proto3" json:"series,omitempty"`
+}
+
+func (x *QueryGetBadgesBySeriesRequest) Reset() {
+	*x = QueryGetBadgesBySeriesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_concord_badge_query_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryGetBadgesBySeriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryGetBadgesBySeriesRequest) ProtoMessage() {}
+
+// Deprecated: Use QueryGetBadgesBySeriesRequest.ProtoReflect.Descriptor instead.
+func (*QueryGetBadgesBySeriesRequest) Descriptor() ([]byte, []int) {
+	return file_concord_badge_query_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *QueryGetBadgesBySeriesRequest) GetSeries() string {
+	if x != nil {
+		return x.Series
+	}
+	return ""
+}
+
+type QueryGetBadgesBySeriesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Badges []*Badge `protobuf:"bytes,1,rep,name=badges,proto3" json:"badges,omitempty"`
+}
+
+func (x *QueryGetBadgesBySeriesResponse) Reset() {
+	*x = QueryGetBadgesBySeriesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_concord_badge_query_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueryGetBadgesBySeriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueryGetBadgesBySeriesResponse) ProtoMessage() {}
+
+// Deprecated: Use QueryGetBadgesBySeriesResponse.ProtoReflect.Descriptor instead.
+func (*QueryGetBadgesBySeriesResponse) Descriptor() ([]byte, []int) {
+	return file_concord_badge_query_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *QueryGetBadgesBySeriesResponse) GetBadges() []*Badge {
+	if x != nil {
+		return x.Badges
+	}
+	return nil
+}
+
 var File_concord_badge_query_proto protoreflect.FileDescriptor
 
 var file_concord_badge_query_proto_rawDesc = []byte{
@@ -3900,57 +4884,77 @@ var file_concord_badge_query_proto_rawDesc = []byte{
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31, 0x0a, 0x06, 0x73, 0x65, 0x72, 0x69,
 	0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x63, 0x6f, 0x73, 0x6d, 0x6f,
 	0x73, 0x2e, 0x6e, 0x66, 0x74, 0x2e, 0x76, 0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x43, 0x6c,
-	0x61, 0x73, 0x73, 0x52, 0x06, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x32, 0xee, 0x04, 0x0a, 0x05,
-	0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x76, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12,
-	0x21, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e,
-	0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x25, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1f, 0x12, 0x1d,
-	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x94, 0x01,
-	0x0a, 0x08, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x12, 0x23, 0x2e, 0x63, 0x6f, 0x6e,
-	0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79,
-	0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x24, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e,
-	0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37, 0x12, 0x35, 0x2f,
-	0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f,
-	0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65, 0x74, 0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f,
-	0x7b, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x49, 0x64, 0x7d, 0x2f, 0x7b, 0x62, 0x61, 0x64, 0x67,
-	0x65, 0x49, 0x64, 0x7d, 0x12, 0xa9, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67,
-	0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x12, 0x2b, 0x2e, 0x63, 0x6f, 0x6e, 0x63,
+	0x61, 0x73, 0x73, 0x52, 0x06, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x22, 0x37, 0x0a, 0x1d, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x53,
+	0x65, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06,
+	0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x65,
+	0x72, 0x69, 0x65, 0x73, 0x22, 0x4e, 0x0a, 0x1e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74,
+	0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2c, 0x0a, 0x06, 0x62, 0x61, 0x64, 0x67, 0x65, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
+	0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x06, 0x62, 0x61,
+	0x64, 0x67, 0x65, 0x73, 0x32, 0x9f, 0x06, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x76,
+	0x0a, 0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x21, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
+	0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6f,
+	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72,
+	0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x25, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1f, 0x12, 0x1d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e,
+	0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f,
+	0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x94, 0x01, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x42, 0x61,
+	0x64, 0x67, 0x65, 0x12, 0x23, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61,
+	0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
+	0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65,
+	0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37, 0x12, 0x35, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74,
+	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67,
+	0x65, 0x74, 0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x7b, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73,
+	0x49, 0x64, 0x7d, 0x2f, 0x7b, 0x62, 0x61, 0x64, 0x67, 0x65, 0x49, 0x64, 0x7d, 0x12, 0xa9, 0x01,
+	0x0a, 0x10, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e,
+	0x65, 0x72, 0x12, 0x2b, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
+	0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65,
+	0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2c, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e,
+	0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79,
+	0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3a, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x34, 0x12, 0x32, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f,
+	0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65,
+	0x74, 0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x73, 0x5f, 0x62, 0x79, 0x5f, 0x6f, 0x77, 0x6e, 0x65,
+	0x72, 0x2f, 0x7b, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x7d, 0x12, 0xa9, 0x01, 0x0a, 0x10, 0x47, 0x65,
+	0x74, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x12, 0x2b,
+	0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x42, 0x79, 0x4f,
+	0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6f,
+	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72,
+	0x79, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3a, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x34, 0x12, 0x32, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63,
+	0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65, 0x74, 0x5f, 0x73, 0x65,
+	0x72, 0x69, 0x65, 0x73, 0x5f, 0x62, 0x79, 0x5f, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x2f, 0x7b, 0x6f,
+	0x77, 0x6e, 0x65, 0x72, 0x7d, 0x12, 0xae, 0x01, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64,
+	0x67, 0x65, 0x73, 0x42, 0x79, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x12, 0x2c, 0x2e, 0x63, 0x6f,
+	0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72,
+	0x79, 0x47, 0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x53, 0x65, 0x72, 0x69,
+	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x63, 0x6f, 0x6e, 0x63,
 	0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47,
-	0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64,
-	0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x42,
-	0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x34, 0x12, 0x32, 0x2f, 0x63,
-	0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62,
-	0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65, 0x74, 0x5f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x73, 0x5f,
-	0x62, 0x79, 0x5f, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x2f, 0x7b, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x7d,
-	0x12, 0xa9, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73, 0x42, 0x79,
-	0x4f, 0x77, 0x6e, 0x65, 0x72, 0x12, 0x2b, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e,
-	0x62, 0x61, 0x64, 0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x65,
-	0x72, 0x69, 0x65, 0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x69, 0x65,
-	0x73, 0x42, 0x79, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x3a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x34, 0x12, 0x32, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72,
-	0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65,
-	0x2f, 0x67, 0x65, 0x74, 0x5f, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x5f, 0x62, 0x79, 0x5f, 0x6f,
-	0x77, 0x6e, 0x65, 0x72, 0x2f, 0x7b, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x7d, 0x42, 0xa2, 0x01, 0x0a,
-	0x11, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64,
-	0x67, 0x65, 0x42, 0x0a, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
-	0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e,
-	0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69,
-	0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02,
-	0x03, 0x43, 0x42, 0x58, 0xaa, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42,
-	0x61, 0x64, 0x67, 0x65, 0xca, 0x02, 0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42,
-	0x61, 0x64, 0x67, 0x65, 0xe2, 0x02, 0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42,
-	0x61, 0x64, 0x67, 0x65, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61,
-	0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67,
-	0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x74, 0x42, 0x61, 0x64, 0x67, 0x65, 0x73, 0x42, 0x79, 0x53, 0x65, 0x72, 0x69, 0x65, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x36,
+	0x12, 0x34, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
+	0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0x2f, 0x67, 0x65, 0x74, 0x5f, 0x62, 0x61, 0x64,
+	0x67, 0x65, 0x73, 0x5f, 0x62, 0x79, 0x5f, 0x73, 0x65, 0x72, 0x69, 0x65, 0x73, 0x2f, 0x7b, 0x73,
+	0x65, 0x72, 0x69, 0x65, 0x73, 0x7d, 0x42, 0xa2, 0x01, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x2e, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x62, 0x61, 0x64, 0x67, 0x65, 0x42, 0x0a, 0x51, 0x75,
+	0x65, 0x72, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x72, 0x6e, 0x74, 0x2f, 0x63,
+	0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6f, 0x6e, 0x63, 0x6f,
+	0x72, 0x64, 0x2f, 0x62, 0x61, 0x64, 0x67, 0x65, 0xa2, 0x02, 0x03, 0x43, 0x42, 0x58, 0xaa, 0x02,
+	0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x2e, 0x42, 0x61, 0x64, 0x67, 0x65, 0xca, 0x02,
+	0x0d, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0xe2, 0x02,
+	0x19, 0x43, 0x6f, 0x6e, 0x63, 0x6f, 0x72, 0x64, 0x5c, 0x42, 0x61, 0x64, 0x67, 0x65, 0x5c, 0x47,
+	0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0e, 0x43, 0x6f, 0x6e,
+	0x63, 0x6f, 0x72, 0x64, 0x3a, 0x3a, 0x42, 0x61, 0x64, 0x67, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3965,38 +4969,43 @@ func file_concord_badge_query_proto_rawDescGZIP() []byte {
 	return file_concord_badge_query_proto_rawDescData
 }
 
-var file_concord_badge_query_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_concord_badge_query_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_concord_badge_query_proto_goTypes = []interface{}{
-	(*QueryParamsRequest)(nil),            // 0: concord.badge.QueryParamsRequest
-	(*QueryParamsResponse)(nil),           // 1: concord.badge.QueryParamsResponse
-	(*QueryGetBadgeRequest)(nil),          // 2: concord.badge.QueryGetBadgeRequest
-	(*QueryGetBadgeResponse)(nil),         // 3: concord.badge.QueryGetBadgeResponse
-	(*QueryGetBadgesByOwnerRequest)(nil),  // 4: concord.badge.QueryGetBadgesByOwnerRequest
-	(*QueryGetBadgesByOwnerResponse)(nil), // 5: concord.badge.QueryGetBadgesByOwnerResponse
-	(*QueryGetSeriesByOwnerRequest)(nil),  // 6: concord.badge.QueryGetSeriesByOwnerRequest
-	(*QueryGetSeriesByOwnerResponse)(nil), // 7: concord.badge.QueryGetSeriesByOwnerResponse
-	(*Params)(nil),                        // 8: concord.badge.Params
-	(*Badge)(nil),                         // 9: concord.badge.Badge
-	(*v1beta1.Class)(nil),                 // 10: cosmos.nft.v1beta1.Class
+	(*QueryParamsRequest)(nil),             // 0: concord.badge.QueryParamsRequest
+	(*QueryParamsResponse)(nil),            // 1: concord.badge.QueryParamsResponse
+	(*QueryGetBadgeRequest)(nil),           // 2: concord.badge.QueryGetBadgeRequest
+	(*QueryGetBadgeResponse)(nil),          // 3: concord.badge.QueryGetBadgeResponse
+	(*QueryGetBadgesByOwnerRequest)(nil),   // 4: concord.badge.QueryGetBadgesByOwnerRequest
+	(*QueryGetBadgesByOwnerResponse)(nil),  // 5: concord.badge.QueryGetBadgesByOwnerResponse
+	(*QueryGetSeriesByOwnerRequest)(nil),   // 6: concord.badge.QueryGetSeriesByOwnerRequest
+	(*QueryGetSeriesByOwnerResponse)(nil),  // 7: concord.badge.QueryGetSeriesByOwnerResponse
+	(*QueryGetBadgesBySeriesRequest)(nil),  // 8: concord.badge.QueryGetBadgesBySeriesRequest
+	(*QueryGetBadgesBySeriesResponse)(nil), // 9: concord.badge.QueryGetBadgesBySeriesResponse
+	(*Params)(nil),                         // 10: concord.badge.Params
+	(*Badge)(nil),                          // 11: concord.badge.Badge
+	(*v1beta1.Class)(nil),                  // 12: cosmos.nft.v1beta1.Class
 }
 var file_concord_badge_query_proto_depIdxs = []int32{
-	8,  // 0: concord.badge.QueryParamsResponse.params:type_name -> concord.badge.Params
-	9,  // 1: concord.badge.QueryGetBadgeResponse.badge:type_name -> concord.badge.Badge
-	9,  // 2: concord.badge.QueryGetBadgesByOwnerResponse.badges:type_name -> concord.badge.Badge
-	10, // 3: concord.badge.QueryGetSeriesByOwnerResponse.series:type_name -> cosmos.nft.v1beta1.Class
-	0,  // 4: concord.badge.Query.Params:input_type -> concord.badge.QueryParamsRequest
-	2,  // 5: concord.badge.Query.GetBadge:input_type -> concord.badge.QueryGetBadgeRequest
-	4,  // 6: concord.badge.Query.GetBadgesByOwner:input_type -> concord.badge.QueryGetBadgesByOwnerRequest
-	6,  // 7: concord.badge.Query.GetSeriesByOwner:input_type -> concord.badge.QueryGetSeriesByOwnerRequest
-	1,  // 8: concord.badge.Query.Params:output_type -> concord.badge.QueryParamsResponse
-	3,  // 9: concord.badge.Query.GetBadge:output_type -> concord.badge.QueryGetBadgeResponse
-	5,  // 10: concord.badge.Query.GetBadgesByOwner:output_type -> concord.badge.QueryGetBadgesByOwnerResponse
-	7,  // 11: concord.badge.Query.GetSeriesByOwner:output_type -> concord.badge.QueryGetSeriesByOwnerResponse
-	8,  // [8:12] is the sub-list for method output_type
-	4,  // [4:8] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	10, // 0: concord.badge.QueryParamsResponse.params:type_name -> concord.badge.Params
+	11, // 1: concord.badge.QueryGetBadgeResponse.badge:type_name -> concord.badge.Badge
+	11, // 2: concord.badge.QueryGetBadgesByOwnerResponse.badges:type_name -> concord.badge.Badge
+	12, // 3: concord.badge.QueryGetSeriesByOwnerResponse.series:type_name -> cosmos.nft.v1beta1.Class
+	11, // 4: concord.badge.QueryGetBadgesBySeriesResponse.badges:type_name -> concord.badge.Badge
+	0,  // 5: concord.badge.Query.Params:input_type -> concord.badge.QueryParamsRequest
+	2,  // 6: concord.badge.Query.GetBadge:input_type -> concord.badge.QueryGetBadgeRequest
+	4,  // 7: concord.badge.Query.GetBadgesByOwner:input_type -> concord.badge.QueryGetBadgesByOwnerRequest
+	6,  // 8: concord.badge.Query.GetSeriesByOwner:input_type -> concord.badge.QueryGetSeriesByOwnerRequest
+	8,  // 9: concord.badge.Query.GetBadgesBySeries:input_type -> concord.badge.QueryGetBadgesBySeriesRequest
+	1,  // 10: concord.badge.Query.Params:output_type -> concord.badge.QueryParamsResponse
+	3,  // 11: concord.badge.Query.GetBadge:output_type -> concord.badge.QueryGetBadgeResponse
+	5,  // 12: concord.badge.Query.GetBadgesByOwner:output_type -> concord.badge.QueryGetBadgesByOwnerResponse
+	7,  // 13: concord.badge.Query.GetSeriesByOwner:output_type -> concord.badge.QueryGetSeriesByOwnerResponse
+	9,  // 14: concord.badge.Query.GetBadgesBySeries:output_type -> concord.badge.QueryGetBadgesBySeriesResponse
+	10, // [10:15] is the sub-list for method output_type
+	5,  // [5:10] is the sub-list for method input_type
+	5,  // [5:5] is the sub-list for extension type_name
+	5,  // [5:5] is the sub-list for extension extendee
+	0,  // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_concord_badge_query_proto_init() }
@@ -4103,6 +5112,30 @@ func file_concord_badge_query_proto_init() {
 				return nil
 			}
 		}
+		file_concord_badge_query_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryGetBadgesBySeriesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_concord_badge_query_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueryGetBadgesBySeriesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -4110,7 +5143,7 @@ func file_concord_badge_query_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_concord_badge_query_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
